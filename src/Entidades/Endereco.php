@@ -58,7 +58,7 @@ class Endereco extends EntidadeAbstrata
 	 */
 	public function setUf($uf)
 	{
-		if (!in_array(strtoupper($uf), $estados)) {
+		if (!in_array(strtoupper($uf), $this->estados)) {
 			throw new \InvalidArgumentException("Sigla do estado inválida!");
 		}
 		
