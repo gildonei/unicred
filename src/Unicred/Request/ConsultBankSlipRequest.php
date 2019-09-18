@@ -51,6 +51,11 @@ class ConsultBankSlipRequest extends AbstractRequest
             "Cooperativa: {$this->getAssignor()->getBankAgency()}",
         ]);
 
+        // Sometimes response comes null with no reason
+        if (empty($response)) {
+            return null;
+        }
+
         $param->setBarcode($response->codBarras);
         $param->setDigitableLine($response->linhaDigitavel);
 
