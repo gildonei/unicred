@@ -42,6 +42,8 @@ composer require gildonei/unicred:dev-master
 use \Unicred\Environment;
 use \Unicred\UnicredApi;
 use \Unicred\Entity\Assignor;
+use Unicred\Entity\Payer;
+use Unicred\Entity\Address;
 use \Unicred\Entity\BankSlip;
 use \Unicred\Request\AuthenticationRequest;
 use \Unicred\Exception\UnicredRequestException;
