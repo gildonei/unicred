@@ -35,6 +35,8 @@ composer require gildonei/unicred:dev-master
 
 ### Exemplo de uso
 
+#### Registro de Título
+
 ```php
 
 <?php
@@ -93,6 +95,54 @@ try {
 
     #Atribui o ID do boleto Unicred ao objeto boleto
     $boleto->setBankSlipId($boletoId);
+
+    # Consulta o objeto boleto na API - obtém código de barras e linha digitável
+    $boleto = $unicred->consultBankSlip($boleto);
+
+    #Output do objeto boleto (BankSlip)
+    print_r($boleto);
+
+} catch (UnicredRequestException $e) {
+    echo $e->getUnicredError()->getMessage();
+
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+```
+
+#### Consulta de Título
+
+```php
+
+<?php
+
+use \Unicred\Environment;
+use \Unicred\UnicredApi;
+use \Unicred\Entity\Assignor;
+use \Unicred\Entity\BankSlip;
+use \Unicred\Request\AuthenticationRequest;
+use \Unicred\Exception\UnicredRequestException;
+
+try {
+    #Preparando o ambiente
+    $ambiente = Environment::sandbox();
+
+    #Dados do Cedente (Cliente Unicred)
+    $cedente = new Assignor();
+    $cedente->setBankAgency('BANK AGENCY NUMBER')
+        ->setApiKey('SUA API KEY')
+        ->setUser('SEU LOGIN')
+        ->setPassword('SUA SENHA')
+        ->setPayeeCode('SEU CÓDIGO DE BENEFICIÁRIO')
+        ->setPortifolio('CÓDIGO VARIAÇÃO DA CARTEIRA');
+
+    #Obter o Token de Acesso
+    $autenticacao = new AuthenticationRequest($cedente, $ambiente);
+    $autenticacao->execute();
+
+    #Dados do boleto
+    $boleto = new BankSlip();
+    $boleto->setBankSlipId('TOKEN DO BOLETO');
 
     # Consulta o objeto boleto na API - obtém código de barras e linha digitável
     $boleto = $unicred->consultBankSlip($boleto);
