@@ -1,3 +1,6 @@
+[![Build Status](https://api.travis-ci.org/gildonei/unicred.png)](https://travis-ci.org/gildonei/unicred)
+[![Latest Stable Version](https://poser.pugx.org/gildonei/unicred/v/stable.svg)](https://packagist.org/packages/gildonei/unicred)
+
 # Unicred API 
 Versão PHP para consumo da API de serviços do banco Unicred.
 Utilizado para autenticação, emissão e consulta de títulos de cobrança.
