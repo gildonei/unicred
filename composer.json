@@ -6,6 +6,7 @@
     "license": "MIT",
     "version": "1.0.0",
     "minimum-stability": "dev",
+    "keywords": ["php", "unicred", "banco"],
     "authors": [
         {
             "name": "Gildonei Mendes Anacleto Junior",
