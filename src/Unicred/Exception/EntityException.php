@@ -3,10 +3,10 @@
 namespace Unicred\Exception;
 
 /**
- * Action Exception
+ * Entity Exception
  *
  * @author Gildonei Mendes Anacleto Junior <junior@sitecomarte.com.br>
  */
-class ActionException extends \Exception
+class EntityException extends \Exception
 {
 }
