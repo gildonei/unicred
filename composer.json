@@ -1,7 +1,7 @@
 {
     "name": "gildonei/unicred",
     "description": "Unicred PHP Api",
-    "homepage": "https://www.lupainformatica.com.br",
+    "homepage": "https://portal-api.e-unicred.com.br/api-portal",
     "type": "library",
     "license": "MIT",
     "version": "1.0.0",
