@@ -3,10 +3,34 @@ Versão PHP para consumo da API de serviços do banco Unicred.
 Utilizado para autenticação, emissão e consulta de títulos de cobrança.
 Biblioteca não oficial
 
-### Versão PHP
-5.6+
 
-## Exemplo de uso
+### Dependências
+
+* PHP >= 5.6
+
+### Instalando o SDK
+
+Se já possui um arquivo `composer.json`, basta adicionar a seguinte dependência ao seu projeto:
+
+```json
+"require": {
+    "gildonei/unicred": "dev-master"
+}
+```
+
+Com a dependência adicionada ao `composer.json`, basta executar:
+
+```
+composer install
+```
+
+Alternativamente, você pode executar diretamente em seu terminal:
+
+```
+composer require gildonei/unicred:dev-master
+```
+
+### Exemplo de uso
 
 ```php
 
