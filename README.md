@@ -4,7 +4,7 @@ Utilizado para autenticação, emissão e consulta de títulos de cobrança.
 Biblioteca não oficial
 
 ### Versão PHP
-7+
+5.6+
 
 ## Exemplo de uso
 
