@@ -1,0 +1,12 @@
+{
+    "name": "gildonei/unicred",
+    "description": "Unicred PHP Api",
+    "author": "Gildonei Mendes Anacleto Junior <junior@sitecomarte.com.br>",
+    "homepage": "https://www.sitecomarte.com.br",
+    "type": "library",
+    "license": "mit",
+    "version": "1.0.0",
+    "require": {
+        "monolog/monolog": "1.0.*"
+    }
+}
