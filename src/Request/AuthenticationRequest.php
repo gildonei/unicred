@@ -2,8 +2,9 @@
 
 namespace Unicred\Request;
 
-use Unicred\Entity\AbstractRequest;
+use Unicred\Request\AbstractRequest;
 use Unicred\Entity\Assignor;
+use Unicred\Environment;
 
 /**
  * Class AuthenticationRequest
@@ -25,8 +26,8 @@ class AuthenticationRequest extends AbstractRequest
     /**
      * Constructor.
      *
-     * @param Assignor $assignor
-     * @param Environment $environment
+     * @param \Unicred\Entity\Assignor $assignor
+     * @param \Unicred\Environment $environment
      */
     public function __construct(Assignor $assignor, Environment $environment)
     {
