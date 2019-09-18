@@ -2,7 +2,10 @@
 
 namespace Unicred\Request;
 
-use Unicred\Entity\AbstractRequest;
+use Unicred\Environment;
+use Unicred\Entity\Assignor;
+use Unicred\Entity\BankSlip;
+use Unicred\Request\AbstractRequest;
 
 /**
  * Class InvoiceRequest
@@ -30,7 +33,7 @@ class CreateBankSlipRequest extends AbstractRequest
     }
 
     /**
-     * @param BankSlip $param
+     * @param \Unicred\Entity\BankSlip $param
      * @return null
      * @throws \Unicred\Exception\UnicredRequestException
      * @throws \RuntimeException
@@ -38,7 +41,7 @@ class CreateBankSlipRequest extends AbstractRequest
     public function execute($param = null)
     {
         if (!$param instanceof BankSlip) {
-            throw new InvalidArgumentException('Bank Slip not send!');
+            throw new \InvalidArgumentException('Bank Slip not sent!!');
         }
 
         $url = "{$this->environment->getApiUrl()}cobranca/v2/beneficiarios/{$this->getAssignor()->getPayeeCode()}/titulos";

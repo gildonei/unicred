@@ -4,6 +4,7 @@ namespace Unicred\Request;
 
 use Unicred\Entity\UnicredError;
 use Unicred\Exception\UnicredRequestException;
+use Unicred\Entity\Assignor;
 
 /**
  * Class AbstractRequest
@@ -21,7 +22,7 @@ abstract class AbstractRequest
     /**
      * Constructor
      *
-     * @param Assignor $assignor
+     * @param \Unicred\Entity\Assignor $assignor
      */
     public function __construct(Assignor $assignor)
     {
