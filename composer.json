@@ -1,7 +1,7 @@
 {
     "name": "gildonei/unicred",
     "description": "Unicred PHP Api",
-    "homepage": "https://www.sitecomarte.com.br",
+    "homepage": "https://www.lupainformatica.com.br",
     "type": "library",
     "license": "MIT",
     "version": "1.0.0",
@@ -10,7 +10,8 @@
     "authors": [
         {
             "name": "Gildonei Mendes Anacleto Junior",
-            "email": "gildonei.mendes@gmail.com"
+            "homepage": "https://www.sitecomarte.com.br",
+            "email": "junior@sitecomarte.com.br"
         }
     ],
     "require": {
