@@ -4,7 +4,7 @@
     "homepage": "https://portal-api.e-unicred.com.br/api-portal",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "minimum-stability": "dev",
     "keywords": ["php", "unicred", "banco"],
     "authors": [
