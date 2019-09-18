@@ -52,7 +52,7 @@ try {
 
     #Dados do Cedente (Cliente Unicred)
     $cedente = new Assignor();
-    $cedente->setBankAgency(9184)
+    $cedente->setBankAgency('BANK AGENCY NUMBER')
         ->setApiKey('SUA API KEY')
         ->setUser('SEU LOGIN')
         ->setPassword('SUA SENHA')
