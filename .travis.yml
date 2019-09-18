@@ -5,3 +5,9 @@ php:
   - '7.1'
   - '7.2'
   - '7.3'
+sudo: false
+install: true
+script: php -v
+branches:
+  only:
+  - master
