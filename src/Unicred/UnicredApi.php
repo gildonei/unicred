@@ -4,6 +4,8 @@ namespace Unicred;
 
 use Unicred\Request\CreateBankSlipRequest;
 use Unicred\Request\ConsultBankSlipRequest;
+use Unicred\Entity\Assignor;
+use Unicred\Entity\BankSlip;
 
 /**
  * The Unicred API for creation and consult of bank slip.
