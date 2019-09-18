@@ -18,6 +18,8 @@
         "php": ">=5.6"
     },
     "autoload": {
-        "psr-0": {"Unicred\\": "src/"}
+        "psr-0": {
+            "Unicred": "src"
+        }
     }
 }
