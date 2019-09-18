@@ -4,7 +4,8 @@
     "homepage": "https://www.sitecomarte.com.br",
     "type": "library",
     "license": "MIT",
-    "version": "dev-master",
+    "version": "1.0.0",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Gildonei Mendes Anacleto Junior",
