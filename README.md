@@ -159,3 +159,8 @@ try {
 
 ```
 
+### Agradecimentos e Referências
+
+Parte do modelo de implementação e referência para o desenvolvimento desta API foi tirada de inspiração no projeto Cielo API-3.0 desenvolvido pelo @netojoaobatista - https://github.com/DeveloperCielo/API-3.0-PHP
+
+Qualquer contribuilção adicional como testes, melhorias, correções e evoluções será muito bem vinda.
