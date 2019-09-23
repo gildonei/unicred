@@ -128,7 +128,7 @@ class BankSlip extends AbstractEntity
         if (empty($value)) {
             throw new \InvalidArgumentException('Bank Slip value is empty!');
         }
-        if (is_numeric($value) && !is_float($value)) {
+        if (!preg_match('/^[1-9]\d*(\.\d+)?$/', $value)) {
             throw new \InvalidArgumentException('Bank Slip value is not a decimal value!');
         }
         $this->value = $value;
