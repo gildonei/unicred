@@ -285,9 +285,8 @@ class Payer extends AbstractEntity
      */
     private function validateCompanyId($document)
     {
-        $document = (string)$this->onlyNumbers($document);
-
-        if (strlen($document) != 14) {
+        $document = (string)str_pad($this->onlyNumbers($document), 14, 0, STR_PAD_LEFT);
+        if (preg_match('/(\d)\1{13}/', $document)){
             return false;
         }
 
