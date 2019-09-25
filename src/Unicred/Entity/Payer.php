@@ -236,12 +236,12 @@ class Payer extends AbstractEntity
         switch ($this->getPayerType()) {
             case 'F':
                 if (!$this->validatePersonId($document)) {
-                    throw new \InvalidArgumentException('Document inválid!');
+                    throw new \InvalidArgumentException('Invalid Person Document!');
                 }
                 break;
             case 'J':
                 if (!$this->validateCompanyId($document)) {
-                    throw new \InvalidArgumentException('Document inválid!');
+                    throw new \InvalidArgumentException('Invalid Company Document!');
                 }
                 break;
             default:
