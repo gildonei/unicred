@@ -5,6 +5,7 @@
 Versão PHP para consumo da API de serviços do banco Unicred.
 Utilizado para autenticação, emissão e consulta de títulos de cobrança.
 Biblioteca não oficial
+Site oficial - https://portal-api.e-unicred.com.br/api-portal/
 
 
 ### Dependências
