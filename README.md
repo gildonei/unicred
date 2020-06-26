@@ -2,7 +2,7 @@
 [![Latest Stable Version](https://poser.pugx.org/gildonei/unicred/v/stable.svg)](https://packagist.org/packages/gildonei/unicred)
 
 # Unicred API 
-Versão PHP para consumo da API de serviços do banco Unicred.
+Versão PHP para consumo da API de serviços do banco Unicred (Cobweb - da UBR - Unicred Brasil).
 Utilizado para autenticação, emissão e consulta de títulos de cobrança.
 
 Site oficial - https://portal-api.e-unicred.com.br/api-portal/
