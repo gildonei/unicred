@@ -56,6 +56,10 @@ class ConsultBankSlipRequest extends AbstractRequest
             return null;
         }
 
+        $param->setDueDate(new \DateTime($response->dataDeVencimento));
+        $param->setValue($response->valor);
+        $param->setStatus($response->status);
+        $param->setReason($response->motivo);
         $param->setBarcode($response->codBarras);
         $param->setDigitableLine($response->linhaDigitavel);
 

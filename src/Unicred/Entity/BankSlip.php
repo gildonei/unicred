@@ -67,6 +67,18 @@ class BankSlip extends AbstractEntity
     private $digitLine;
 
     /**
+     * Bank status
+     * @var string
+     */
+    private $status;
+
+    /**
+     * Bank reason
+     * @var string
+     */
+    private $reason;
+
+    /**
      * Define bank slip payer
      * @param \Unicred\Entity\Payer $payer
      * @return Payer
@@ -275,6 +287,48 @@ class BankSlip extends AbstractEntity
     function getDigitableLine()
     {
         return $this->digitLine;
+    }
+
+    /**
+     * Define status
+     * @param string $text
+     * @return BankSlip
+     */
+    function setStatus($text)
+    {
+        $this->status = $text;
+
+        return $this;
+    }
+
+    /**
+     * Return status
+     * @return string
+     */
+    function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Define reason
+     * @param string $text
+     * @return BankSlip
+     */
+    function setReason($text)
+    {
+        $this->reason = $text;
+
+        return $this;
+    }
+
+    /**
+     * Return reason
+     * @return string
+     */
+    function getReason()
+    {
+        return $this->reason;
     }
 
     /**
