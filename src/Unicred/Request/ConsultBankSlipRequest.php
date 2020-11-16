@@ -63,6 +63,10 @@ class ConsultBankSlipRequest extends AbstractRequest
         $param->setBarcode($response->codBarras);
         $param->setDigitableLine($response->linhaDigitavel);
 
+        if ($response->nossoNumero) {
+            $param->setBankSlipNumber(substr($response->nossoNumero, 0, -1));
+        }
+
         return $param;
     }
 
