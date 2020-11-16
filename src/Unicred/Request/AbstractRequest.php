@@ -34,7 +34,7 @@ abstract class AbstractRequest
      *
      * @return mixed
      */
-    public abstract function execute($param);
+    public abstract function execute($param = null);
 
     /**
      * @param $method
