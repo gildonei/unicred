@@ -65,8 +65,33 @@ class CreateBankSlipRequest extends AbstractRequest
                     'uf' => $param->getPayer()->getAddress()->getState(),
                     'cep' => $param->getPayer()->getAddress()->getZip()
                 ]
-            ]
+            ],
+            'mensagensFichaCompensacao' => $param->getMessages()
         ];
+
+        if (!empty($param->getDiscount()->getIndicator())) {
+            $data['desconto'] = [
+                'indicador' => $param->getDiscount()->getIndicator(),
+                'dataLimite' => $param->getDiscount()->getDateLimit()->format('Y-m-d'),
+                'valor' => $param->getDiscount()->getValue(),
+            ];
+        }
+
+        if (!empty($param->getFine()->getIndicator())) {
+            $data['multa'] = [
+                'indicador' => $param->getFine()->getIndicator(),
+                'dataLimite' => $param->getFine()->getDateLimit()->format('Y-m-d'),
+                'valor' => $param->getFine()->getValue(),
+            ];
+        }
+
+        if (!empty($param->getInterest()->getIndicator())) {
+            $data['juros'] = [
+                'indicador' => $param->getInterest()->getIndicator(),
+                'dataLimite' => $param->getInterest()->getDateLimit()->format('Y-m-d'),
+                'valor' => $param->getInterest()->getValue(),
+            ];
+        }
 
         return $this->sendRequest('POST', $url, $data, [
             "Authorization: bearer {$this->getAssignor()->getAuthentication()->getAcessToken()}",

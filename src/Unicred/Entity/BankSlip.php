@@ -4,6 +4,7 @@ namespace Unicred\Entity;
 
 use Unicred\Entity\AbstractEntity;
 use Unicred\Entity\Payer;
+use Unicred\Entity\Value;
 
 /**
  * Entity BankSlip
@@ -79,6 +80,30 @@ class BankSlip extends AbstractEntity
     private $reason;
 
     /**
+     * Bank slip discount
+     * @var Value
+     */
+    private $discount;
+
+    /**
+     * Bank slip fine
+     * @var Value
+     */
+    private $fine;
+
+    /**
+     * Bank slip interest
+     * @var Value
+     */
+    private $interest;
+
+    /**
+     * Bank slip messages
+     * @var array
+     */
+    private $messages = [];
+
+    /**
      * Define bank slip payer
      * @param \Unicred\Entity\Payer $payer
      * @return Payer
@@ -137,6 +162,7 @@ class BankSlip extends AbstractEntity
      */
     public function setValue($value)
     {
+        setlocale(LC_NUMERIC, 'usa');
         if (empty($value)) {
             throw new \InvalidArgumentException('Bank Slip value is empty!');
         }
@@ -149,7 +175,7 @@ class BankSlip extends AbstractEntity
     }
 
     /**
-     * Retorn payer's corporate name
+     * Return payer's corporate name
      * @return string
      */
     public function getValue()
@@ -362,5 +388,119 @@ class BankSlip extends AbstractEntity
         }
 
         $this->bankSlipNumberDv = $digit;
+    }
+
+    /**
+     * Add a new message to bankslip
+     *
+     * @param string $message
+     * @throws \InvalidArgumentException
+     * @return BankSlip
+     */
+    public function addMessage($message = '')
+    {
+        if (strlen($message) > 80) {
+            throw new \InvalidArgumentException('Message must be less than 80 chars!');
+        }
+
+        if (count($this->messages) > 6) {
+            throw new \InvalidArgumentException('Maximum number of 6 messages exceeded!');
+        }
+
+        $this->messages[] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Return bank slip message
+     *
+     * @param string $message
+     * @return array
+     */
+    public function getMessages()
+    {
+        return $this->messages;
+    }
+
+    /**
+     * Define the bank slip discount
+     *
+     * @param string $message
+     * @return array
+     */
+    public function setDiscount(Value $discount)
+    {
+        $this->discount = $discount;
+
+        return $this;
+    }
+
+    /**
+     * Return the bank slip discount
+     *
+     * @return Value
+     */
+    public function getDiscount()
+    {
+        if (empty($this->discount)) {
+            $this->setDiscount(new Value());
+        }
+
+        return $this->discount;
+    }
+
+    /**
+     * Define the bank slip fine
+     *
+     * @param string $message
+     * @return array
+     */
+    public function setFine(Value $fine)
+    {
+        $this->fine = $fine;
+
+        return $this;
+    }
+
+    /**
+     * Return the bank slip fine
+     *
+     * @return Value
+     */
+    public function getFine()
+    {
+        if (empty($this->fine)) {
+            $this->setFine(new Value());
+        }
+
+        return $this->fine;
+    }
+
+    /**
+     * Deinterest the bank slip interest
+     *
+     * @param string $message
+     * @return array
+     */
+    public function setInterest(Value $interest)
+    {
+        $this->interest = $interest;
+
+        return $this;
+    }
+
+    /**
+     * Return the bank slip interest
+     *
+     * @return Value
+     */
+    public function getInterest()
+    {
+        if (empty($this->interest)) {
+            $this->setInterest(new Value());
+        }
+
+        return $this->interest;
     }
 }
