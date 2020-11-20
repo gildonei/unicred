@@ -76,7 +76,7 @@ try {
         ->setValue(10.45)
         ->setYourNumber($parcelaId)
         ->setBankSlipNumber($parcelaId)
-        ->getPayer()
+		->getPayer()
             ->setName('Fulano de Tal')
             ->setPayerType(PAYER::PERSON)
             ->setDocument('44675831141')
@@ -88,6 +88,18 @@ try {
             ->setCity('Cidade')
             ->setAddress('Logradouro com Número')
             ->setZip('99999-999');
+	$boleto->getDiscount()
+		->setIndicator(0)	// Opções válidas no manual da Unicred
+		->setDateLimit(new DateTime())
+		->setValue(0.00);
+	$boleto->getFine()
+		->setIndicator(0)
+		->setDateLimit(new DateTime())
+		->setValue(0.00);
+	$boleto->getInterest()
+		->setIndicator(0)
+		->setDateLimit(new DateTime())
+		->setValue(0.00);
 
     #Instancia a API
     $unicred = new UnicredApi($cedente, $ambiente);
