@@ -175,8 +175,8 @@ class BankSlip extends AbstractEntity
     }
 
     /**
-     * Return payer's corporate name
-     * @return string
+     * Return invoice value
+     * @return float
      */
     public function getValue()
     {
@@ -198,7 +198,7 @@ class BankSlip extends AbstractEntity
 
     /**
      * Return bank slip due date
-     * @return string
+     * @return \DateTime
      */
     function getDueDate()
     {
