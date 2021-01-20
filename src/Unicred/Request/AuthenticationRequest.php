@@ -67,7 +67,7 @@ class AuthenticationRequest extends AbstractRequest
     protected function unserialize($json)
     {
         $response = json_decode($json);
-        $this->setAcessToken($response->accessToken);
+        $this->setAccessToken($response->accessToken);
 
         return $this;
     }
@@ -78,10 +78,10 @@ class AuthenticationRequest extends AbstractRequest
      * @throws \InvalidArgumentException
      * @return Assignor
      */
-    public function setAcessToken($token)
+    public function setAccessToken($token)
     {
         if (empty($token)) {
-            throw new \InvalidArgumentException('Acess Token is empty!');
+            throw new \InvalidArgumentException('Access Token is empty!');
         }
         $this->accessToken = $token;
         $this->getAssignor()->setAuthentication($this);
@@ -93,7 +93,7 @@ class AuthenticationRequest extends AbstractRequest
      * Return Access Token
      * @return string
      */
-    public function getAcessToken()
+    public function getAccessToken()
     {
         return $this->accessToken;
     }
@@ -104,6 +104,6 @@ class AuthenticationRequest extends AbstractRequest
      */
     public function isAuthenticated()
     {
-        return !empty($this->getAcessToken());
+        return !empty($this->getAccessToken());
     }
 }
