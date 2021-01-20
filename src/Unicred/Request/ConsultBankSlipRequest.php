@@ -47,7 +47,7 @@ class ConsultBankSlipRequest extends AbstractRequest
         $url = "{$this->environment->getApiUrl()}cobranca/v2/beneficiarios/{$this->getAssignor()->getPayeeCode()}/titulos/{$param->getBankSlipId()}/status";
 
         $response = $this->sendRequest('GET', $url, null, [
-            "Authorization: bearer {$this->getAssignor()->getAuthentication()->getAcessToken()}",
+            "Authorization: bearer {$this->getAssignor()->getAuthentication()->getAccessToken()}",
             "Cooperativa: {$this->getAssignor()->getBankAgency()}",
         ]);
 

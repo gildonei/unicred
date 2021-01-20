@@ -94,7 +94,7 @@ class CreateBankSlipRequest extends AbstractRequest
         }
 
         return $this->sendRequest('POST', $url, $data, [
-            "Authorization: bearer {$this->getAssignor()->getAuthentication()->getAcessToken()}",
+            "Authorization: bearer {$this->getAssignor()->getAuthentication()->getAccessToken()}",
             "Cooperativa: {$this->getAssignor()->getBankAgency()}",
         ]);
     }
