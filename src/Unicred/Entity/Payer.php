@@ -295,22 +295,22 @@ class Payer extends AbstractEntity
         }
 
         for ($i = 0, $j = 5, $soma = 0; $i < 12; $i++) {
-            $soma += $document{$i} * $j;
+            $soma += $document[$i] * $j;
             $j = ($j == 2) ? 9 : $j - 1;
         }
 
         $restoDv1 = $soma % 11;
-        if ($document{12} != ($restoDv1 < 2 ? 0 : 11 - $restoDv1))
+        if ($document[12] != ($restoDv1 < 2 ? 0 : 11 - $restoDv1))
             return false;
 
         for ($i = 0, $j = 6, $soma = 0; $i < 13; $i++) {
-            $soma += $document{$i} * $j;
+            $soma += $document[$i] * $j;
             $j = ($j == 2) ? 9 : $j - 1;
         }
 
         $restoDv2 = $soma % 11;
 
-        return $document{13} == ($restoDv2 < 2 ? 0 : 11 - $restoDv2);
+        return $document[13] == ($restoDv2 < 2 ? 0 : 11 - $restoDv2);
     }
 
     /**
