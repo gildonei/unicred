@@ -45,7 +45,7 @@ class Address extends AbstractEntity
 
     /**
      * Número do cep com 8 dígitos
-     * @var int
+     * @var int|string
      */
     private $zip;
 
@@ -166,14 +166,14 @@ class Address extends AbstractEntity
             throw new \InvalidArgumentException('CEP Code must contain 8 numbers!');
         }
 
-        $this->zip = (int)$nrZip;
+        $this->zip = str_pad($nrZip, 8, 0, STR_PAD_LEFT);
 
         return $this;
     }
 
     /**
      * Return the zip code number
-     * @return int
+     * @return string
      */
     function getZip()
     {
